@@ -1,0 +1,35 @@
+
+body{
+    background-image:url(img/hojas_fondo.jpg);
+    margin:0px;
+    padding:0px;
+    text-align: center;
+}
+
+.indie-flower-regular {
+    font-family: "Indie Flower", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#container_login{
+    margin:auto;
+    margin-top:100px;
+    width:500px;
+    height:500px;
+    border:1px solid grey;
+   
+    background-color:rgba(255,255,255,0.7);
+
+}
+
+#logo_mejores{
+    margin-top:100px;
+    transition: 300ms all;
+    font-size:50px;
+}
+
+#logo_mejores:hover{
+    font-size: larger;
+    cursor:pointer;
+}
