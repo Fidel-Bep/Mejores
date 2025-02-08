@@ -71,6 +71,7 @@ CREATE TABLE publicaciones(
     id int(11) NOT NULL AUTO_INCREMENT,
     nick_usuario varchar(50) NUll,
     nick_testigo varchar(50) NULL,
+    titulo varchar(200) NOT NULL,
     comentario_usuario varchar(400) NULL,
     comentario_testigo varchar(400) NULL,
     id_meta int(11) NULL,
@@ -101,13 +102,17 @@ CREATE TABLE pruebas(
 )ENGINE=InnoDB;
 
 CREATE TABLE comentarios(
+    id int(11) NOT NULL AUTO_INCREMENT,
     id_publicacion int(11) NOT NULL,
     nick_comentador varchar(50) NOT NULL,
-    duda_comentario varchar (400) NULL,
+    id_acto_publicos varchar (400) NULL,
+    duda varchar(2) NULL,
+    testigo varchar(2) NULL,
+    usuario varchar(2) NULL,
     comentario varchar(400)NOT NULL,
     fecha_modificacion timestamp NULL ON UPDATE CURRENT_TIMESTAMP,
     fecha_creacion timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT pk_comentarios PRIMARY KEY (id_publicacion,nick_comentador),
+    CONSTRAINT pk_comentarios PRIMARY KEY (id),
     CONSTRAINT fk_comentarios_publicacion FOREIGN KEY (id_publicacion) REFERENCES publicaciones(id) ON UPDATE CASCADE,
     CONSTRAINT fk_comentarios_nick_comentador FOREIGN KEY (nick_comentador) REFERENCES usuarios(nick) ON UPDATE CASCADE
 
